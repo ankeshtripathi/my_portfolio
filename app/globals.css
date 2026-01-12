@@ -124,6 +124,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section-heading .bg-title {
+    font-size: 70px;
+  }
+
+  .section-heading .main-title {
+    font-size: 28px;
+  }
+
+  .section-heading .line {
+    width: 180px;
+  }
+}
 
 
   

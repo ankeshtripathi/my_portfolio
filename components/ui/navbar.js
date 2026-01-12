@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "./button";
 import { ModeToggle } from "./them-btn";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Navbar() {
   return (
@@ -37,7 +38,7 @@ export default function Navbar() {
           </Link>
 
           <Button>Download CV</Button>
-          <ModeToggle/>
+          <ModeToggle />
         </div>
 
         <div className="md:hidden">
@@ -61,9 +62,13 @@ export default function Navbar() {
             </SheetTrigger>
 
             <SheetContent side="right">
-              <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
-                <ModeToggle/>
+              <SheetHeader className="flex flex-row items-center justify-between gap-4">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>AP</AvatarFallback>
+                </Avatar>
+
+                <ModeToggle />
               </SheetHeader>
 
               <div className="mt-6 flex flex-col space-y-4 text-sm items-center justify-center">

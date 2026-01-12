@@ -42,12 +42,20 @@ const Contact = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 py-20">
-      <div className="text-center mb-14">
-        <h3 className="text-orange-500 tracking-widest font-semibold">
+    <section className="container mx-auto px-4 py-10">
+      <div className="text-center mb-14 relative">
+        <h3
+          className="text-orange-500 font-bold tracking-[0.3em] 
+                 lg:text-4xl sm:text-2xl text-xl
+                 inline-block relative"
+        >
           CONTACT
+          <span
+            className="absolute left-1/2 -bottom-3 w-16 h-1 
+                     bg-orange-500 rounded-full 
+                     -translate-x-1/2"
+          ></span>
         </h3>
-        <h2 className="text-4xl font-bold text-gray-900 mt-2">Contact</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
@@ -104,17 +112,17 @@ const Contact = () => {
             <InfoItem
               icon={<Mail size={18} />}
               title="Email"
-              text="yourgmail@gmail.com"
+              text="ankeshprasad2001gmail@gmail.com"
             />
             <InfoItem
               icon={<Phone size={18} />}
               title="Phone"
-              text="+91 72192 94594"
+              text="+91 9105009865"
             />
             <InfoItem
               icon={<MapPin size={18} />}
               title="Address"
-              text="Karnataka, India"
+              text="Haridwar Uttarakhand, India"
             />
           </div>
         </div>

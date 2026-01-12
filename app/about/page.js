@@ -37,7 +37,7 @@ export default function Page() {
     {
       role: "Internship",
       date: "15 July -15 Sep 2023",
-      company: "Code",
+      company: "Code yogi",
       desc: "Handled key projects, improved UX performance & code quality.",
     },
   ];
@@ -53,7 +53,7 @@ export default function Page() {
       title: "Diploma in Computer Science Engineering (CSE)",
       date: "2018 – 2021",
       college: "Government Polytechnic Srinagar Garhwal",
-      desc: "Board: UBTER | Percentage: 80%",
+      desc: "Board: UBTER | Percentage: 86%",
     },
     {
       title: "Higher Secondary (12th)",
@@ -111,9 +111,22 @@ export default function Page() {
 
       {/* ================= SKILLS SECTION ================= */}
 
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-6 py-12">
         {/* SECTION TITLE */}
-        <h3 className="text-4xl font-bold text-center mb-5">Skills</h3>
+        <div className="text-center mb-14 relative">
+          <h3
+            className="text-orange-500 font-bold tracking-[0.3em] 
+                 lg:text-4xl sm:text-2xl text-xl
+                 inline-block relative"
+          >
+            skills
+            <span
+              className="absolute left-1/2 -bottom-3 w-16 h-1 
+                     bg-orange-500 rounded-full 
+                     -translate-x-1/2"
+            ></span>
+          </h3>
+        </div>
 
         {/* CONTENT WRAPPER */}
         <div className="flex flex-col lg:flex-row items-center gap-14">
@@ -167,10 +180,23 @@ export default function Page() {
         </div>
       </section>
       {/* ================= EXPERIENCE & EDUCATION ================= */}
-      <section className="container mx-auto px-6 py-16 space-y-16">
+      <section className="container mx-auto px-6 py-16 space-y-6">
         {/* EXPERIENCE */}
         <div>
-          <h3 className="text-4xl font-bold text-center mb-12">Experience</h3>
+          <div className="text-center mb-14 relative">
+            <h3
+              className="text-orange-500 font-bold tracking-[0.3em] 
+                 lg:text-4xl sm:text-2xl text-xl
+                 inline-block relative"
+            >
+              Experience
+              <span
+                className="absolute left-1/2 -bottom-3 w-16 h-1 
+                     bg-orange-500 rounded-full 
+                     -translate-x-1/2"
+              ></span>
+            </h3>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experience.map((item, index) => (
@@ -232,8 +258,20 @@ export default function Page() {
 
         {/* EDUCATION */}
         <div>
-          <h3 className="text-4xl font-bold text-center mb-12">Education</h3>
-
+          <div className="text-center mb-14 relative">
+            <h3
+              className="text-orange-500 font-bold tracking-[0.3em] 
+                 lg:text-4xl sm:text-2xl text-xl
+                 inline-block relative"
+            >
+              Education
+              <span
+                className="absolute left-1/2 -bottom-3 w-16 h-1 
+                     bg-orange-500 rounded-full 
+                     -translate-x-1/2"
+              ></span>
+            </h3>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education.map((item, index) => (
               <Card

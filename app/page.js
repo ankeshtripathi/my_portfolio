@@ -60,16 +60,23 @@ const Home = () => {
     <div>
       <section className="container mx-auto px-4 py-10 lg:flex lg:items-center lg:space-x-8 lg:h-128">
         {/* Left Content */}
-        <div className="w-full md:text-center  lg:w-1/2 lg:text-left lg:-mt-8 space-y-2">
-          <h1 className="text-3xl text-orange-400"> Hello , I'm</h1>
+        <div className="w-full lg:w-1/2 space-y-2 text-left">
+          <h1 className="text-xl sm:text-2xl text-orange-400">Hello, I'm</h1>
 
-          <div className="text-6xl font-bold  sm:text-4xl">
-            <span>Ankesh</span>
-            <span>Prasad</span>
+          <div className="font-bold leading-tight text-left">
+            <span className="block lg:inline text-4xl sm:text-5xl md:text-6xl">
+              Ankesh
+            </span>
+            <span className="block lg:inline text-4xl sm:text-5xl md:text-6xl text-orange-400 lg:ml-2">
+              Prasad
+            </span>
           </div>
-          <h4 className="text-gray-400 ">Web Developer</h4>
-          <Button>Contact ME</Button>
-          {/* Search Box */}
+
+          <h4 className="text-gray-400 text-base sm:text-lg md:text-xl">
+            Web Developer
+          </h4>
+
+          <Button className="mt-2 text-sm sm:text-base">Contact Me</Button>
         </div>
 
         {/* Right Image */}
@@ -83,7 +90,7 @@ const Home = () => {
           />
         </div>
       </section>
-      <section className="container mx-auto px-4 py-16 relative z-10">
+      <section className="container mx-auto px-4 py-6 relative z-10">
         <div className="flex items-center justify-center mb-10">
           <h3 className="text-3xl font-bold">Services</h3>
         </div>
@@ -93,34 +100,64 @@ const Home = () => {
             <Card
               key={index}
               className="
+          group
           h-full
-          flex flex-col
+          flex
+          flex-col
           justify-center
           items-center
           text-center
           transition-all
           duration-300
-          hover:scale-105
-          hover:shadow-xl
+          hover:-translate-y-2
+          hover:shadow-2xl
         "
             >
-              <CardHeader className="flex flex-col items-center">
-                <CardTitle className="text-4xl mb-2 hover:text-orange-400 transition">
+              <CardHeader className="flex flex-col items-center space-y-2">
+                <CardTitle
+                  className="
+              text-4xl
+              transition
+              duration-300
+              group-hover:text-orange-400
+              group-hover:scale-110
+            "
+                >
                   {item.icon}
                 </CardTitle>
-                <CardDescription className="text-lg font-semibold hover:text-orange-400 transition">
+
+                <CardDescription
+                  className="
+              text-lg
+              font-semibold
+              transition
+              duration-300
+              group-hover:text-orange-400
+              relative
+              after:absolute
+              after:left-0
+              after:-bottom-1
+              after:h-[2px]
+              after:w-0
+              after:bg-orange-400
+              after:transition-all
+              after:duration-300
+              group-hover:after:w-full
+            "
+                >
                   {item.title}
                 </CardDescription>
               </CardHeader>
 
-              <CardFooter className="text-sm text-gray-600 px-6">
+              <CardFooter className="text-sm text-gray-600 px-6 transition duration-300 group-hover:text-gray-800">
                 {item.desc}
               </CardFooter>
             </Card>
           ))}
         </div>
       </section>
-      <section className="container mx-auto px-4 py-24 relative">
+
+      <section className="container mx-auto px-4 py-8 relative">
         <div className="flex flex-col items-center">
           <h3 className="text-3xl font-bold text-orange-500 mb-10">
             TOP PROJECT
