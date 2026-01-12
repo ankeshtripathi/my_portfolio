@@ -83,60 +83,76 @@ const Home = () => {
           />
         </div>
       </section>
-      <section className="container mx-auto px-4 py-10 lg:items-center lg:space-x-8 lg:h-128 relative z-10 ">
-        <div className="flex items-center justify-center">
-          <h3> Services</h3>
+      <section className="container mx-auto px-4 py-16 relative z-10">
+        <div className="flex items-center justify-center mb-10">
+          <h3 className="text-3xl font-bold">Services</h3>
         </div>
-        <div
-          className="grid gap-6 
-                  grid-cols-1 
-                  sm:grid-cols-1 
-                  lg:grid-cols-3"
-        >
-          {data.map((item, index) => {
-            return (
-              <div key={index}>
-                <Card className="sm:h-80 flex flex-col justify-center items-center text-center hover:scale-105 ">
-                  <CardHeader className="flex flex-col items-center text-center ">
-                    <CardTitle className="hover:text-orange-400">
-                      {item.icon}
-                    </CardTitle>
-                    <CardDescription className="hover:text-orange-400">
-                      {item.title}
-                    </CardDescription>
-                  </CardHeader>
 
-                  <CardFooter>{item.desc}</CardFooter>
-                </Card>
-              </div>
-            );
-          })}
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {data.map((item, index) => (
+            <Card
+              key={index}
+              className="
+          h-full
+          flex flex-col
+          justify-center
+          items-center
+          text-center
+          transition-all
+          duration-300
+          hover:scale-105
+          hover:shadow-xl
+        "
+            >
+              <CardHeader className="flex flex-col items-center">
+                <CardTitle className="text-4xl mb-2 hover:text-orange-400 transition">
+                  {item.icon}
+                </CardTitle>
+                <CardDescription className="text-lg font-semibold hover:text-orange-400 transition">
+                  {item.title}
+                </CardDescription>
+              </CardHeader>
+
+              <CardFooter className="text-sm text-gray-600 px-6">
+                {item.desc}
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </section>
-      <section className="container mx-auto px-4 py-24 relative z-0">
-        <div className="flex flex-col items-center py-12  rounded-2xl">
-          <h3 className="text-3xl font-bold text-orange-500 mb-8">
+      <section className="container mx-auto px-4 py-24 relative">
+        <div className="flex flex-col items-center">
+          <h3 className="text-3xl font-bold text-orange-500 mb-10">
             TOP PROJECT
           </h3>
 
           <div
             className="
         w-full
-        md:w-[100%]
+        max-w-5xl
         max-h-[70vh]
-        bg-gray-200
-        rounded-xl
+        bg-gray-100
+        rounded-2xl
         overflow-y-auto
-        border border-gray-400
+        border
+        border-gray-300
+        p-4
       "
           >
-            <div className="flex flex-col gap-6 p-4">
+            <div className="flex flex-col gap-6">
               {images.map((src, idx) => (
                 <img
                   key={idx}
                   src={src}
                   alt={`project-${idx}`}
-                  className="w-full object-contain rounded-lg"
+                  className="
+              w-full
+              rounded-xl
+              object-cover
+              hover:scale-[1.02]
+              transition
+              duration-300
+            "
                 />
               ))}
             </div>
