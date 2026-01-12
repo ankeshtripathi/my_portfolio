@@ -113,7 +113,7 @@ export default function Page() {
 
       <section className="container mx-auto px-6 py-16">
         {/* SECTION TITLE */}
-        <h3 className="text-4xl font-bold text-center mb-12">Skills</h3>
+        <h3 className="text-4xl font-bold text-center mb-5">Skills</h3>
 
         {/* CONTENT WRAPPER */}
         <div className="flex flex-col lg:flex-row items-center gap-14">

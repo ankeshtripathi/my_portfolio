@@ -83,7 +83,7 @@ const Home = () => {
           />
         </div>
       </section>
-      <section className="container mx-auto px-4 py-10 lg:items-center lg:space-x-8 lg:h-128 relative z-10 mb-32">
+      <section className="container mx-auto px-4 py-10 lg:items-center lg:space-x-8 lg:h-128 relative z-10 ">
         <div className="flex items-center justify-center">
           <h3> Services</h3>
         </div>
