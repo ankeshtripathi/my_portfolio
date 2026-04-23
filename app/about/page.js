@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +13,13 @@ import {
 } from "@/components/ui/card";
 
 export default function Page() {
+
+const stats = [
+  { number: "10+", label: "Completed Projects" },
+  { number: "95%", label: "Client Satisfaction" },
+  { number: "1+", label: "Years Experience" },
+];
+
   const data = [
     { image: "/html.svg", title: "HTML", skl: "95%" },
     { image: "/css.svg", title: "CSS", skl: "90%" },
@@ -47,7 +57,8 @@ export default function Page() {
       title: "Bachelor of Technology (B.Tech)",
       date: "Aug 2022 – May 2025",
       college: "Uttarakhand Technical University",
-      desc: "CGPA: 7.11"   },
+      desc: "CGPA: 7.11",
+    },
 
     {
       title: "Diploma in Computer Science Engineering (CSE)",
@@ -69,264 +80,289 @@ export default function Page() {
     },
   ];
 
-
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="flex ">
-          <Image
-            src="/a.jpeg"
-            width={520}
-            height={420}
-            alt="Ankesh Prasad"
-            className="rounded-xl shadow-lg"
-            priority
-          />
-        </div>
-
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl">Hello, I Am</h4>
-          <h1 className="text-5xl font-bold">Ankesh Prasad</h1>
-          <h3 className="text-2xl text-orange-500 font-semibold">
-            Web Developer
-          </h3>
-
-          <p className="text-gray-600 dark:text-gray-300">
-            As the Chief Technology Officer at TF Strategies Pvt. Ltd., I
-            specialize in responsive web development, SEO management, and web
-            hosting. I have successfully developed numerous static and dynamic
-            websites.
-          </p>
-
-          <div className="space-y-1 text-sm">
-            <p>📞 Phone: +91 05009865</p>
-            <p>📧 Email: ankeshprasad20012@gmail.com</p>
-            <p>📍 Address: Haridwar, Uttarakhand</p>
+      <section className="relative max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+        {/* LEFT TEXT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col gap-6"
+        >
+          <div className="w-fit px-4 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-600 dark:text-blue-400 text-sm font-medium border border-blue-200 dark:border-blue-800">
+            👋 Hello, I'm
           </div>
 
-          <Button className="w-fit mt-3">Contact Me</Button>
-        </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+            Ankesh Prasad
+          </h1>
+
+          <h3 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+            Full Stack Web Developer
+          </h3>
+
+          <p className="text-gray-600 dark:text-gray-300 max-w-md">
+            I craft high-performance web applications with modern UI, scalable
+            backend, and seamless user experience using MERN stack.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-4">
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-xl shadow-lg hover:scale-105 transition">
+              🚀 Hire Me
+            </Button>
+
+            <Button
+              variant="outline"
+              className="px-6 py-2 rounded-xl border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              📄 Download CV
+            </Button>
+          </div>
+
+          <div className="flex gap-6 mt-6">
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                2+
+              </h2>
+              <p className="text-gray-500 text-sm">Experience</p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                10+
+              </h2>
+              <p className="text-gray-500 text-sm">Projects</p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                5+
+              </h2>
+              <p className="text-gray-500 text-sm">Tech</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex justify-center"
+        >
+          <div className="relative group">
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 blur-2xl opacity-30 rounded-3xl group-hover:opacity-50 transition"></div>
+
+            <div className="relative backdrop-blur-xl bg-white/10 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-3xl p-4 shadow-2xl">
+              <Image
+                src="/a.jpeg"
+                width={340}
+                height={260}
+                alt="Ankesh"
+                className="rounded-2xl"
+              />
+
+              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2 shadow-lg">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  ⚡ Available for Work
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ================= SKILLS SECTION ================= */}
 
-      <section className="container mx-auto px-6 py-12">
-        {/* SECTION TITLE */}
-        <div className="text-center mb-14 relative">
-          <h3
-            className="text-orange-500 font-bold tracking-[0.3em] 
-                 lg:text-4xl sm:text-2xl text-xl
-                 inline-block relative"
-          >
-            skills
-            <span
-              className="absolute left-1/2 -bottom-3 w-16 h-1 
-                     bg-orange-500 rounded-full 
-                     -translate-x-1/2"
-            ></span>
-          </h3>
-        </div>
-
-        {/* CONTENT WRAPPER */}
-        <div className="flex flex-col lg:flex-row items-center gap-14">
-          {/* LEFT IMAGE */}
-          <div className="flex justify-center w-full lg:w-1/3 ">
-            <Image
-              src="/download.png"
-              width={500}
-              height={300}
-              alt="skills"
-              className="animate-spin text-white"
-              style={{ animationDuration: "20s" }}
-            />
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-6 space-y-14">
+          {/* HEADING */}
+          <div className="text-center relative">
+            <h3
+              className="text-blue-500 font-bold tracking-[0.3em] 
+        lg:text-4xl sm:text-2xl text-xl inline-block relative"
+            >
+              Skills
+              <span
+                className="absolute left-1/2 -bottom-3 w-16 h-1 
+          bg-gradient-to-r from-blue-500 to-purple-500 
+          rounded-full -translate-x-1/2"
+              ></span>
+            </h3>
           </div>
 
-          {/* RIGHT GRID */}
-          <div className="w-full lg:w-2/3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:items-center">
-            {data.map((item, index) => (
-              <Card
-                key={index}
-                className="h-full flex flex-col text-center hover:scale-105 transition duration-300 "
-              >
-                <CardHeader className="items-center space-y-2 ">
-                  <Image
-                    src={item.image}
-                    width={100}
-                    height={100}
-                    alt={item.title}
-                    className="object-contain "
-                  />
-                  <CardDescription className="font-medium">
-                    {item.title}
-                  </CardDescription>
-                </CardHeader>
+          {/* CONTENT */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            {/* LEFT IMAGE */}
+            <div className="flex justify-center">
+              <Image
+                src="/download.png"
+                width={320}
+                height={320}
+                alt="skills"
+                className="animate-spin opacity-80"
+                style={{ animationDuration: "20s" }}
+              />
+            </div>
 
-                <CardContent className="px-6 mt-auto">
-                  <div className="w-full bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-orange-500 h-2 rounded-full"
-                      style={{ width: item.skl }}
+            {/* RIGHT GRID */}
+            <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {data.map((item, index) => (
+                <Card
+                  key={index}
+                  className="group h-full flex flex-col text-center 
+            border border-gray-200 dark:border-gray-800
+            hover:-translate-y-1 hover:shadow-xl 
+            transition-all duration-300"
+                >
+                  <CardHeader className="items-center space-y-2">
+                    <Image
+                      src={item.image}
+                      width={80}
+                      height={80}
+                      alt={item.title}
+                      className="object-contain group-hover:scale-110 transition"
                     />
-                  </div>
-                </CardContent>
 
-                <CardFooter className="justify-center text-sm font-semibold mt-auto">
-                  {item.skl}
-                </CardFooter>
-              </Card>
-            ))}
+                    <CardDescription className="font-medium text-gray-700 dark:text-gray-300">
+                      {item.title}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="px-6 mt-auto">
+                    <div className="w-full bg-gray-200 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                        style={{ width: item.skl }}
+                      />
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="justify-center text-sm font-semibold mt-auto text-gray-700 dark:text-gray-300">
+                    {item.skl}
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
       {/* ================= EXPERIENCE & EDUCATION ================= */}
-      <section className="container mx-auto px-6 py-16 space-y-6">
-        {/* EXPERIENCE */}
-        <div>
-          <div className="text-center mb-14 relative">
-            <h3
-              className="text-orange-500 font-bold tracking-[0.3em] 
-                 lg:text-4xl sm:text-2xl text-xl
-                 inline-block relative"
-            >
-              Experience
-              <span
-                className="absolute left-1/2 -bottom-3 w-16 h-1 
-                     bg-orange-500 rounded-full 
-                     -translate-x-1/2"
-              ></span>
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {experience.map((item, index) => (
-              <Card
-                key={index}
-                className="
-            group
-            relative
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:shadow-xl
-            hover:border-orange-500/40
-            border
-          "
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-6 space-y-16">
+          {/* EXPERIENCE */}
+          <div>
+            <div className="text-center mb-14 relative">
+              <h3
+                className="text-blue-500 font-bold tracking-[0.3em] 
+          lg:text-4xl sm:text-2xl text-xl inline-block relative"
               >
-                {/* TOP HOVER BAR */}
-                <div
-                  className="
-            absolute top-0 left-0 h-1 w-0
-            bg-orange-500
-            transition-all
-            duration-300
-            group-hover:w-full
-          "
-                />
-
-                <CardHeader className="space-y-1">
-                  <h4 className="text-xl font-semibold group-hover:text-orange-500 transition">
-                    {item.role}
-                  </h4>
-                  <p className="text-sm text-gray-500">{item.company}</p>
-                  <p className="text-xs text-gray-400">{item.date}</p>
-                </CardHeader>
-
-                <CardContent className="text-gray-600 dark:text-gray-300">
-                  {item.desc}
-                </CardContent>
-
-                {/* ARROW HINT */}
+                Experience
                 <span
-                  className="
-            absolute bottom-4 right-4
-            text-xl
-            text-orange-500
-            opacity-0
-            translate-x-2
-            transition
-            group-hover:opacity-100
-            group-hover:translate-x-0
-          "
-                >
-                  ↗
-                </span>
-              </Card>
-            ))}
-          </div>
-        </div>
+                  className="absolute left-1/2 -bottom-3 w-16 h-1 
+            bg-gradient-to-r from-blue-500 to-purple-500 
+            rounded-full -translate-x-1/2"
+                />
+              </h3>
+            </div>
 
-        {/* EDUCATION */}
-        <div>
-          <div className="text-center mb-14 relative">
-            <h3
-              className="text-orange-500 font-bold tracking-[0.3em] 
-                 lg:text-4xl sm:text-2xl text-xl
-                 inline-block relative"
-            >
-              Education
-              <span
-                className="absolute left-1/2 -bottom-3 w-16 h-1 
-                     bg-orange-500 rounded-full 
-                     -translate-x-1/2"
-              ></span>
-            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {experience.map((item, index) => (
+                <Card
+                  key={index}
+                  className="group relative transition-all duration-300 
+            hover:-translate-y-1 hover:shadow-xl 
+            border border-gray-200 dark:border-gray-800"
+                >
+                  {/* TOP BAR */}
+                  <div
+                    className="absolute top-0 left-0 h-1 w-0 
+              bg-gradient-to-r from-blue-500 to-purple-500 
+              transition-all duration-300 group-hover:w-full"
+                  />
+
+                  <CardHeader className="space-y-1">
+                    <h4
+                      className="text-xl font-semibold 
+                group-hover:text-blue-500 transition"
+                    >
+                      {item.role}
+                    </h4>
+                    <p className="text-sm text-gray-500">{item.company}</p>
+                    <p className="text-xs text-gray-400">{item.date}</p>
+                  </CardHeader>
+
+                  <CardContent className="text-gray-600 dark:text-gray-300">
+                    {item.desc}
+                  </CardContent>
+
+                  <span
+                    className="absolute bottom-4 right-4 text-xl 
+              text-blue-500 opacity-0 translate-x-2 transition 
+              group-hover:opacity-100 group-hover:translate-x-0"
+                  >
+                    ↗
+                  </span>
+                </Card>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((item, index) => (
-              <Card
-                key={index}
-                className="
-            group
-            relative
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:shadow-xl
-            hover:border-orange-500/40
-            border
-          "
+
+          {/* EDUCATION */}
+          <div>
+            <div className="text-center mb-14 relative">
+              <h3
+                className="text-blue-500 font-bold tracking-[0.3em] 
+          lg:text-4xl sm:text-2xl text-xl inline-block relative"
               >
-                {/* TOP HOVER BAR */}
-                <div
-                  className="
-            absolute top-0 left-0 h-1 w-0
-            bg-orange-500
-            transition-all
-            duration-300
-            group-hover:w-full
-          "
-                />
-
-                <CardHeader className="space-y-1">
-                  <h4 className="text-xl font-semibold group-hover:text-orange-500 transition">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-gray-500">{item.college}</p>
-                  <p className="text-xs text-gray-400">{item.date}</p>
-                </CardHeader>
-
-                <CardContent className="text-gray-600 dark:text-gray-300">
-                  {item.desc}
-                </CardContent>
-
-                {/* ARROW HINT */}
+                Education
                 <span
-                  className="
-            absolute bottom-4 right-4
-            text-xl
-            text-orange-500
-            opacity-0
-            translate-x-2
-            transition
-            group-hover:opacity-100
-            group-hover:translate-x-0
-          "
+                  className="absolute left-1/2 -bottom-3 w-16 h-1 
+            bg-gradient-to-r from-blue-500 to-purple-500 
+            rounded-full -translate-x-1/2"
+                />
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {education.map((item, index) => (
+                <Card
+                  key={index}
+                  className="group relative transition-all duration-300 
+            hover:-translate-y-1 hover:shadow-xl 
+            border border-gray-200 dark:border-gray-800"
                 >
-                  ↗
-                </span>
-              </Card>
-            ))}
+                  <div
+                    className="absolute top-0 left-0 h-1 w-0 
+              bg-gradient-to-r from-blue-500 to-purple-500 
+              transition-all duration-300 group-hover:w-full"
+                  />
+
+                  <CardHeader className="space-y-1">
+                    <h4
+                      className="text-xl font-semibold 
+                group-hover:text-blue-500 transition"
+                    >
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-500">{item.college}</p>
+                    <p className="text-xs text-gray-400">{item.date}</p>
+                  </CardHeader>
+
+                  <CardContent className="text-gray-600 dark:text-gray-300">
+                    {item.desc}
+                  </CardContent>
+
+                  <span
+                    className="absolute bottom-4 right-4 text-xl 
+              text-blue-500 opacity-0 translate-x-2 transition 
+              group-hover:opacity-100 group-hover:translate-x-0"
+                  >
+                    ↗
+                  </span>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
