@@ -128,7 +128,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
+  );   
 };
 
 const InfoItem = ({ icon, title, text }) => (
