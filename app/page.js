@@ -75,40 +75,33 @@ const Home = () => {
       desc: "Support, updates, performance optimization and bug fixing.",
     },
   ];
-  const images = ["/Home-Page.webp", "/Home-Page.webp", "/Home-Page.webp"];
+  const projects = [
+    {
+      image: "/immortalmanpower.png",
+      title: "Immortal Manpower",
+      url: "https://www.immortalmanpower.com/",
+    },
+    {
+      image: "/chapersons.png",
+      title: "Chapersons Services",
+      url: "https://chapersons.in/",
+    },
+    {
+      image: "/greenenergy.png",
+      title: "Immortal Green Energy",
+      url: "https://uat-greenenergy.immortalgroup.in/login",
+    },
+  ];
 
   return (
-    <div>
-      <section className="min-h-screen flex items-center text-gray-900 dark:text-white py-16 relative overflow-hidden transition-colors duration-500">
+    <div className="relative">
+      <section className="py-20 flex items-center text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-500">
         {/* BG GLOW */}
         <div className="absolute top-[-120px] left-[-120px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-blue-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-120px] right-[-120px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-purple-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>
 
-        {/* CONTENT WRAPPER (FIXED) */}
+        {/* CONTENT WRAPPER */}
         <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-20">
-          {/* IMAGE */}
-          <motion.div
-            className="flex justify-center md:justify-end order-1 md:order-2"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ perspective: 1000 }}
-          >
-            <motion.div
-              style={{ rotateX, rotateY }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl opacity-40 rounded-2xl"></div>
-
-              <img
-                src="/ankesh.png"
-                alt="Ankesh"
-                className="relative w-[260px] sm:w-[320px] md:w-[400px] rounded-2xl shadow-2xl"
-              />
-            </motion.div>
-          </motion.div>
-
           {/* TEXT */}
           <motion.div
             initial="hidden"
@@ -185,6 +178,29 @@ const Home = () => {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+
+          {/* IMAGE */}
+          <motion.div
+            className="flex justify-center md:justify-end order-1 md:order-2"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: 1000 }}
+          >
+            <motion.div
+              style={{ rotateX, rotateY }}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl opacity-40 rounded-2xl"></div>
+
+              <img
+                src="/ankesh.png"
+                alt="Ankesh"
+                className="relative w-[260px] sm:w-[320px] md:w-[400px] rounded-2xl shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -317,7 +333,7 @@ const Home = () => {
 
           {/* PROJECT GRID */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((src, idx) => (
+            {projects.map((project, idx) => (
               <div
                 key={idx}
                 className="
@@ -330,8 +346,8 @@ const Home = () => {
               >
                 {/* IMAGE */}
                 <img
-                  src={src}
-                  alt={`project-${idx}`}
+                  src={project.image}
+                  alt={project.title}
                   className="
             w-full h-[220px] object-cover
             transition duration-500
@@ -351,10 +367,11 @@ const Home = () => {
           "
                 >
                   <h4 className="text-lg font-semibold mb-2">
-                    Project {idx + 1}
+                    {project.title}
                   </h4>
 
                   <button
+                    onClick={() => window.open(project.url, "_blank")}
                     className="
               px-4 py-2 rounded-lg
               bg-gradient-to-r from-blue-500 to-purple-500

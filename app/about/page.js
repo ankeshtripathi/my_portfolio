@@ -195,14 +195,16 @@ const stats = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             {/* LEFT IMAGE */}
             <div className="flex justify-center">
-              <Image
-                src="/download.png"
-                width={320}
-                height={320}
-                alt="skills"
-                className="animate-spin opacity-80"
-                style={{ animationDuration: "20s" }}
-              />
+              <div className="p-6 rounded-full bg-white/10 dark:bg-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-700">
+                <Image
+                  src="/download.png"
+                  width={280}
+                  height={280}
+                  alt="skills"
+                  className="animate-spin opacity-90 dark:invert dark:opacity-80"
+                  style={{ animationDuration: "20s" }}
+                />
+              </div>
             </div>
 
             {/* RIGHT GRID */}

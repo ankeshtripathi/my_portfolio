@@ -11,18 +11,45 @@ const Projects = () => {
       image: "/tm.webp",
       title: "Task Manager App",
       desc: "MERN stack productivity app",
+      url: null,
     },
     {
       image: "/vns.webp",
       title: "Finance Dashboard",
       desc: "Analytics & charts UI",
+      url: null,
     },
     {
       image: "/af.webp",
       title: "AI Interview App",
       desc: "Real-time interview system",
+      url: null,
+    },
+    {
+      image: "/immortalmanpower.png",
+      title: "Immortal Manpower",
+      desc: "Manpower and staffing solutions website",
+      url: "https://www.immortalmanpower.com/",
+    },
+    {
+      image: "/chapersons.png",
+      title: "Chapersons Services",
+      desc: "Solar energy, civil engineering, and infrastructure solutions",
+      url: "https://chapersons.in/",
+    },
+    {
+      image: "/greenenergy.png",
+      title: "Immortal Green Energy",
+      desc: "Green energy management dashboard",
+      url: "https://uat-greenenergy.immortalgroup.in/login",
     },
   ];
+
+  const handleViewProject = (url) => {
+    if (url) {
+      window.open(url, "_blank");
+    }
+  };
 
   return (
     <section className="relative max-w-6xl mx-auto px-6 py-20">
@@ -70,9 +97,14 @@ const Projects = () => {
 
                     <p className="text-gray-300 text-sm mt-2">{item.desc}</p>
 
-                    <button className="mt-4 px-4 py-2 bg-white text-black rounded-lg text-sm hover:scale-105 transition">
-                      View Project →
-                    </button>
+                    {item.url && (
+                      <button 
+                        onClick={() => handleViewProject(item.url)}
+                        className="mt-4 px-4 py-2 bg-white text-black rounded-lg text-sm hover:scale-105 transition"
+                      >
+                        View Project →
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
