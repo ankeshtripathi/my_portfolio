@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   const project = [
-    {
-      image: "/tm.webp",
-      title: "Task Manager App",
-      desc: "MERN stack productivity app",
-      url: null,
-    },
+    // {
+    //   image: "/tm.webp",
+    //   title: "Task Manager App",
+    //   desc: "MERN stack productivity app",
+    //   url: null,
+    // },
     {
       image: "/vns.webp",
       title: "Finance Dashboard",
