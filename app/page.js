@@ -93,6 +93,33 @@ const Home = () => {
     },
   ];
 
+  const socialLinks = [
+  {
+    icon: FaLinkedin,
+    url: "https://www.linkedin.com/in/ankesh-tripathi-ab20b6265/",
+    label: "LinkedIn",
+    color: "hover:bg-[#0A66C2]",
+  },
+  {
+    icon: FaWhatsapp,
+    url: "https://wa.me/919105009865",
+    label: "WhatsApp",
+    color: "hover:bg-[#25D366]",
+  },
+  {
+    icon: FaPhone,
+    url: "tel:+919105009865",
+    label: "Call",
+    color: "hover:bg-[#16A34A]",
+  },
+  {
+    icon: FaGithub,
+    url: "https://github.com/AnkeshDev05",
+    label: "GitHub",
+    color: "hover:bg-black dark:hover:bg-white dark:hover:text-black",
+  },
+];
+
   return (
     <div className="relative">
       <section className="py-20 flex items-center text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-500">
@@ -167,17 +194,39 @@ const Home = () => {
             </div>
 
             {/* SOCIAL ICONS */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-3">
-              {[FaLinkedin, FaWhatsapp, FaPhone, FaGithub].map((Icon, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.2 }}
-                  className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-blue-500 hover:text-white transition shadow-md cursor-pointer"
-                >
-                  <Icon size={18} />
-                </motion.div>
-              ))}
-            </div>
+           {/* SOCIAL ICONS */}
+<div className="flex flex-wrap justify-center md:justify-start gap-4 pt-3">
+  {socialLinks.map((item, index) => {
+    const Icon = item.icon;
+
+    return (
+      <motion.a
+        key={index}
+        href={item.url}
+        target={item.url.startsWith("http") ? "_blank" : "_self"}
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.15, y: -4 }}
+        whileTap={{ scale: 0.9 }}
+        title={item.label}
+        className={`
+          w-12 h-12
+          flex items-center justify-center
+          rounded-full
+          bg-white dark:bg-gray-800
+          border border-gray-200 dark:border-gray-700
+          text-gray-700 dark:text-white
+          ${item.color}
+          hover:text-white
+          transition-all duration-300
+          shadow-lg hover:shadow-xl
+        `}
+      >
+        <Icon size={20} />
+      </motion.a>
+    );
+  })}
+</div>
+            
           </motion.div>
 
           {/* IMAGE */}
