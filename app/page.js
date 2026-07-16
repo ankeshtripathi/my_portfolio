@@ -236,20 +236,134 @@ const Home = () => {
             onMouseLeave={handleMouseLeave}
             style={{ perspective: 1000 }}
           >
-            <motion.div
-              style={{ rotateX, rotateY }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl opacity-40 rounded-2xl"></div>
+           <motion.div
+  style={{ rotateX, rotateY }}
+  whileHover={{ scale: 1.03 }}
+  animate={{ y: [0, -12, 0] }}
+  transition={{
+    y: {
+      repeat: Infinity,
+      duration: 4,
+      ease: "easeInOut",
+    },
+  }}
+  className="relative flex items-center justify-center"
+>
+  {/* Background Glow */}
+  <div className="absolute h-[480px] w-[480px] rounded-full bg-gradient-to-r from-blue-500/30 via-violet-500/20 to-cyan-400/30 blur-[120px]" />
 
-              <img
-                src="/ankesh.png"
-                alt="Ankesh"
-                className="relative w-[260px] sm:w-[320px] md:w-[400px] rounded-2xl shadow-2xl"
-              />
-            </motion.div>
+  {/* Rotating Gradient Ring */}
+  <motion.div
+    animate={{ rotate: 360 }}
+    transition={{
+      repeat: Infinity,
+      duration: 12,
+      ease: "linear",
+    }}
+    className="absolute h-[420px] w-[420px] rounded-[40px] bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-400 p-[2px]"
+  >
+    <div className="h-full w-full rounded-[38px] bg-white dark:bg-slate-950" />
+  </motion.div>
+
+  {/* Card */}
+  <div className="relative overflow-hidden rounded-[38px] border border-white/20 bg-white/10 p-4 backdrop-blur-xl shadow-[0_40px_80px_rgba(59,130,246,.25)]">
+
+    {/* Image */}
+    <img
+      src="/ankesh.png"
+      alt="Ankesh"
+      className="relative z-10 w-[280px] sm:w-[340px] md:w-[400px] rounded-[28px] object-cover"
+    />
+
+    {/* Top Badge */}
+    <motion.div
+      animate={{ y: [0, -4, 0] }}
+      transition={{
+        repeat: Infinity,
+        duration: 2,
+      }}
+      className="absolute left-5 top-5 z-20"
+    >
+      <div className="flex items-center gap-2 rounded-full border border-green-400/20 bg-white/80 px-4 py-2 backdrop-blur-md dark:bg-slate-900/80">
+        <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
+        <span className="text-sm font-semibold">
+          Available for Work
+        </span>
+      </div>
+    </motion.div>
+
+    {/* Experience */}
+    <motion.div
+      animate={{ y: [0, 6, 0] }}
+      transition={{
+        repeat: Infinity,
+        duration: 3,
+      }}
+      className="absolute right-5 bottom-5 z-20"
+    >
+      <div className="rounded-2xl border border-white/20 bg-white/80 px-5 py-4 backdrop-blur-lg dark:bg-slate-900/80">
+        <p className="text-2xl font-bold text-blue-600">
+          1+
+        </p>
+        <p className="text-xs text-gray-500">
+          Years Experience
+        </p>
+      </div>
+    </motion.div>
+
+    {/* React Badge */}
+    <motion.div
+      animate={{
+        y: [0, -10, 0],
+        rotate: [0, 6, 0],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 3,
+      }}
+      className="absolute -left-8 top-28 z-20"
+    >
+      <div className="rounded-xl bg-sky-500 px-4 py-2 text-white shadow-xl">
+        ⚛ React
+      </div>
+    </motion.div>
+
+    {/* Node Badge */}
+    <motion.div
+      animate={{
+        y: [0, 10, 0],
+        rotate: [0, -6, 0],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 4,
+      }}
+      className="absolute -right-8 top-40 z-20"
+    >
+      <div className="rounded-xl bg-green-600 px-4 py-2 text-white shadow-xl">
+        🚀 Node.js
+      </div>
+    </motion.div>
+
+    {/* Tailwind Badge */}
+    <motion.div
+      animate={{
+        y: [0, -8, 0],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 3,
+      }}
+      className="absolute left-12 bottom-12 z-20"
+    >
+      <div className="rounded-xl bg-cyan-500 px-4 py-2 text-white shadow-xl">
+        💨 Tailwind
+      </div>
+    </motion.div>
+
+  </div>
+</motion.div>
+
           </motion.div>
         </div>
       </section>
