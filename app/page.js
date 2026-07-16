@@ -315,77 +315,65 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 relative">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* HEADING */}
-          <div className="flex flex-col items-center mb-14">
-            <h3
-              className="
-        text-3xl sm:text-4xl font-bold 
-        bg-gradient-to-r from-blue-500 to-purple-500 
-        dark:from-blue-400 dark:to-purple-400
-        bg-clip-text text-transparent
-      "
-            >
-              Top Projects
-            </h3>
+     <section className="py-20 relative">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Heading */}
+    <div className="text-center mb-14">
+      <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+        Top Projects
+      </h2>
+
+      <p className="mt-3 text-gray-500 dark:text-gray-400">
+        Explore some of my featured work.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="group rounded-3xl overflow-hidden bg-white dark:bg-[#0F172A] border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+        >
+          {/* Image Container */}
+          <div className="relative h-[280px] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center overflow-hidden p-6">
+            {/* Background Blur */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition duration-500" />
+
+            {/* Image */}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="relative z-10 max-h-full max-w-full object-contain transition duration-500 group-hover:scale-105"
+            />
           </div>
 
-          {/* PROJECT GRID */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, idx) => (
-              <div
-                key={idx}
-                className="
-          group relative rounded-2xl overflow-hidden
-          border border-gray-200 dark:border-white/10
-          bg-white dark:bg-white/5 backdrop-blur-xl
-          shadow-md hover:shadow-xl
-          transition-all duration-500
-        "
-              >
-                {/* IMAGE */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="
-            w-full h-[220px] object-cover
-            transition duration-500
-            group-hover:scale-110
-          "
-                />
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              {project.title}
+            </h3>
 
-                {/* OVERLAY */}
-                <div
-                  className="
-            absolute inset-0 
-            bg-black/50 opacity-0 
-            group-hover:opacity-100 
-            transition duration-500
-            flex flex-col justify-center items-center
-            text-white
-          "
-                >
-                  <h4 className="text-lg font-semibold mb-2">
-                    {project.title}
-                  </h4>
+            {project.description && (
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                {project.description}
+              </p>
+            )}
 
-                  <button
-                    onClick={() => window.open(project.url, "_blank")}
-                    className="
-              px-4 py-2 rounded-lg
-              bg-gradient-to-r from-blue-500 to-purple-500
-              hover:scale-105 transition
-            "
-                  >
-                    View Project
-                  </button>
-                </div>
-              </div>
-            ))}
+            {/* Button */}
+            <button
+              onClick={() => window.open(project.url, "_blank")}
+              className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
+            >
+              View Live Project
+            </button>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
