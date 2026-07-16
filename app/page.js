@@ -122,251 +122,400 @@ const Home = () => {
 
   return (
     <div className="relative">
-      <section className="py-20 flex items-center text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-500">
-        {/* BG GLOW */}
-        <div className="absolute top-[-120px] left-[-120px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-blue-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>
-        <div className="absolute bottom-[-120px] right-[-120px] w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-purple-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>
+      <section className="relative min-h-screen overflow-hidden flex items-center bg-white dark:bg-[#030712] text-gray-900 dark:text-white">
 
-        {/* CONTENT WRAPPER */}
-        <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-20">
-          {/* TEXT */}
+  {/* ================= Background ================= */}
+
+  <div className="absolute inset-0 overflow-hidden">
+
+    <div className="absolute left-[-150px] top-[-150px] h-[420px] w-[420px] rounded-full bg-blue-500/20 blur-[140px]" />
+
+    <div className="absolute right-[-180px] bottom-[-180px] h-[450px] w-[450px] rounded-full bg-violet-500/20 blur-[150px]" />
+
+    <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
+
+  </div>
+
+  {/* Grid */}
+
+  <div
+    className="absolute inset-0 opacity-[0.05]"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right,#64748b 1px,transparent 1px),linear-gradient(to bottom,#64748b 1px,transparent 1px)",
+      backgroundSize: "60px 60px",
+    }}
+  />
+
+  {/* ================= Main ================= */}
+
+  <div className="relative z-20 mx-auto flex max-w-7xl flex-col-reverse items-center gap-20 px-6 py-24 lg:flex-row">
+
+    {/* ================= LEFT ================= */}
+
+    <motion.div
+      initial={{ opacity: 0, x: -60 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: .8 }}
+      className="flex-1"
+    >
+
+      {/* Available */}
+
+      <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-2">
+
+        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"/>
+
+        <span className="text-sm font-medium">
+
+          Available for Full Time
+
+        </span>
+
+      </div>
+
+      {/* Heading */}
+
+      <h1 className="text-5xl font-black leading-tight md:text-7xl">
+
+        Hi, I'm
+
+        <br/>
+
+        <span className="bg-gradient-to-r from-blue-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent">
+
+          Ankesh Prasad
+
+        </span>
+
+      </h1>
+
+      {/* Type */}
+
+      <h2 className="mt-6 text-2xl font-semibold text-slate-600 dark:text-slate-300">
+
+        Full Stack Developer
+
+      </h2>
+
+      {/* Description */}
+
+      <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+        I build modern web applications with beautiful user interfaces,
+
+        scalable backend architecture, and high-performance experiences
+
+        using React, Node.js, Express, PostgreSQL and modern technologies.
+
+      </p>
+
+      {/* Buttons */}
+
+      <div className="mt-10 flex flex-wrap gap-4">
+
+        <motion.button
+          whileHover={{
+            scale:1.05,
+            y:-3
+          }}
+          whileTap={{scale:.95}}
+          className="rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-4 font-semibold text-white shadow-xl"
+        >
+
+          🚀 View Projects
+
+        </motion.button>
+
+        <motion.button
+          whileHover={{
+            scale:1.05,
+            y:-3
+          }}
+          whileTap={{scale:.95}}
+          className="rounded-2xl border border-slate-300 bg-white/60 px-8 py-4 font-semibold backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/40"
+        >
+
+          Download Resume
+
+        </motion.button>
+
+      </div>
+
+      {/* Stats */}
+
+      <div className="mt-14 grid grid-cols-3 gap-5">
+
+        {[
+          {
+            value:"15+",
+            title:"Projects"
+          },
+          {
+            value:"1+",
+            title:"Experience"
+          },
+          {
+            value:"20+",
+            title:"Technologies"
+          }
+        ].map((item,index)=>(
+
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.2 } },
-            }}
-            className="space-y-5 text-center md:text-left order-2 md:order-1"
+
+            whileHover={{y:-8}}
+
+            key={index}
+
+            className="rounded-3xl border border-white/20 bg-white/50 p-6 backdrop-blur-xl shadow-xl dark:bg-slate-900/40"
+
           >
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-gray-500 dark:text-gray-400"
-            >
-              Hello 👋
-            </motion.p>
 
-            <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-3xl sm:text-4xl md:text-6xl font-extrabold"
-            >
-              I'm{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Ankesh
-              </span>
-            </motion.h1>
+            <h3 className="text-3xl font-black text-blue-600">
 
-            <motion.h2
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300"
-            >
-              Full Stack Developer
-            </motion.h2>
+              {item.value}
 
-            <motion.p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto md:mx-0 text-sm sm:text-base">
-              I build modern, scalable, and high-performance web applications
-              with stunning UI and smooth user experiences.
-            </motion.p>
+            </h3>
 
-            {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-semibold shadow-lg"
-              >
-                🚀 View Projects
-              </motion.button>
+            <p className="mt-2 text-sm text-slate-500">
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-full sm:w-auto px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-              >
-                Contact Me
-              </motion.button>
-            </div>
+              {item.title}
 
-            {/* SOCIAL ICONS */}
-           {/* SOCIAL ICONS */}
-<div className="flex flex-wrap justify-center md:justify-start gap-4 pt-3">
-  {socialLinks.map((item, index) => {
-    const Icon = item.icon;
+            </p>
 
-    return (
-      <motion.a
-        key={index}
-        href={item.url}
-        target={item.url.startsWith("http") ? "_blank" : "_self"}
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.15, y: -4 }}
-        whileTap={{ scale: 0.9 }}
-        title={item.label}
-        className={`
-          w-12 h-12
-          flex items-center justify-center
-          rounded-full
-          bg-white dark:bg-gray-800
-          border border-gray-200 dark:border-gray-700
-          text-gray-700 dark:text-white
-          ${item.color}
-          hover:text-white
-          transition-all duration-300
-          shadow-lg hover:shadow-xl
-        `}
-      >
-        <Icon size={20} />
-      </motion.a>
-    );
-  })}
-</div>
-            
           </motion.div>
 
-          {/* IMAGE */}
-          <motion.div
-            className="flex justify-center md:justify-end order-1 md:order-2"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ perspective: 1000 }}
-          >
-           <motion.div
+        ))}
+
+      </div>
+
+      {/* Social */}
+
+      <div className="mt-10 flex flex-wrap gap-4">
+
+        {socialLinks.map((item,index)=>{
+
+          const Icon=item.icon;
+
+          return(
+
+            <motion.a
+
+              key={index}
+
+              href={item.url}
+
+              target="_blank"
+
+              whileHover={{
+                y:-6,
+                rotate:6,
+                scale:1.1
+              }}
+
+              className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/20 bg-white/60 shadow-lg backdrop-blur-xl dark:bg-slate-900/50"
+
+            >
+
+              <Icon size={22}/>
+
+            </motion.a>
+
+          )
+
+        })}
+
+      </div>
+
+    </motion.div>
+
+    {/* ================= RIGHT ================= */}
+
+   <motion.div
   style={{ rotateX, rotateY }}
   whileHover={{ scale: 1.03 }}
-  animate={{ y: [0, -12, 0] }}
+  animate={{ y: [0, -15, 0] }}
   transition={{
     y: {
+      duration: 5,
       repeat: Infinity,
-      duration: 4,
       ease: "easeInOut",
     },
   }}
   className="relative flex items-center justify-center"
 >
-  {/* Background Glow */}
-  <div className="absolute h-[480px] w-[480px] rounded-full bg-gradient-to-r from-blue-500/30 via-violet-500/20 to-cyan-400/30 blur-[120px]" />
+  {/* Background Mesh */}
+  <div className="absolute h-[550px] w-[550px] rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-400/20 blur-[120px]" />
 
-  {/* Rotating Gradient Ring */}
-  <motion.div
-    animate={{ rotate: 360 }}
-    transition={{
-      repeat: Infinity,
-      duration: 12,
-      ease: "linear",
-    }}
-    className="absolute h-[420px] w-[420px] rounded-[40px] bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-400 p-[2px]"
-  >
-    <div className="h-full w-full rounded-[38px] bg-white dark:bg-slate-950" />
-  </motion.div>
+  {/* Glass Card */}
+  <div className="relative w-[340px] md:w-[420px] rounded-[35px] border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,.15)] overflow-hidden">
 
-  {/* Card */}
-  <div className="relative overflow-hidden rounded-[38px] border border-white/20 bg-white/10 p-4 backdrop-blur-xl shadow-[0_40px_80px_rgba(59,130,246,.25)]">
+    {/* Animated Border */}
+    <div className="absolute inset-0 rounded-[35px] p-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500">
+      <div className="h-full w-full rounded-[33px] bg-white dark:bg-slate-950" />
+    </div>
 
-    {/* Image */}
-    <img
-      src="/ankesh.png"
-      alt="Ankesh"
-      className="relative z-10 w-[280px] sm:w-[340px] md:w-[400px] rounded-[28px] object-cover"
-    />
+    {/* Decorative Blur */}
+    <div className="absolute -top-24 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
 
-    {/* Top Badge */}
-    <motion.div
-      animate={{ y: [0, -4, 0] }}
-      transition={{
-        repeat: Infinity,
-        duration: 2,
-      }}
-      className="absolute left-5 top-5 z-20"
-    >
-      <div className="flex items-center gap-2 rounded-full border border-green-400/20 bg-white/80 px-4 py-2 backdrop-blur-md dark:bg-slate-900/80">
-        <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
-        <span className="text-sm font-semibold">
-          Available for Work
-        </span>
+    <div className="relative z-10 p-6">
+
+      {/* Available */}
+      <div className="mb-5 flex items-center justify-between">
+
+        <div className="flex items-center gap-2 rounded-full bg-green-500/10 border border-green-400/20 px-3 py-1">
+          <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="text-sm font-medium">
+            Available
+          </span>
+        </div>
+
+        <div className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-sm font-semibold text-blue-500">
+          Full Stack
+        </div>
+
       </div>
-    </motion.div>
 
-    {/* Experience */}
-    <motion.div
-      animate={{ y: [0, 6, 0] }}
-      transition={{
-        repeat: Infinity,
-        duration: 3,
-      }}
-      className="absolute right-5 bottom-5 z-20"
-    >
-      <div className="rounded-2xl border border-white/20 bg-white/80 px-5 py-4 backdrop-blur-lg dark:bg-slate-900/80">
-        <p className="text-2xl font-bold text-blue-600">
-          1+
+      {/* Image */}
+      <div className="relative flex justify-center">
+
+        <div className="absolute h-72 w-72 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl" />
+
+        <img
+          src="/ankesh.png"
+          alt="Ankesh"
+          className="relative z-10 w-[260px] md:w-[320px] rounded-3xl"
+        />
+
+      </div>
+
+      {/* Name */}
+      <div className="mt-6 text-center">
+
+        <h2 className="text-3xl font-bold">
+          Ankesh Prasad
+        </h2>
+
+        <p className="mt-1 text-gray-500">
+          React • Node • PostgreSQL
         </p>
-        <p className="text-xs text-gray-500">
-          Years Experience
-        </p>
-      </div>
-    </motion.div>
 
-    {/* React Badge */}
-    <motion.div
-      animate={{
-        y: [0, -10, 0],
-        rotate: [0, 6, 0],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 3,
-      }}
-      className="absolute -left-8 top-28 z-20"
-    >
-      <div className="rounded-xl bg-sky-500 px-4 py-2 text-white shadow-xl">
-        ⚛ React
       </div>
-    </motion.div>
 
-    {/* Node Badge */}
-    <motion.div
-      animate={{
-        y: [0, 10, 0],
-        rotate: [0, -6, 0],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 4,
-      }}
-      className="absolute -right-8 top-40 z-20"
-    >
-      <div className="rounded-xl bg-green-600 px-4 py-2 text-white shadow-xl">
-        🚀 Node.js
-      </div>
-    </motion.div>
+      {/* Stats */}
 
-    {/* Tailwind Badge */}
-    <motion.div
-      animate={{
-        y: [0, -8, 0],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 3,
-      }}
-      className="absolute left-12 bottom-12 z-20"
-    >
-      <div className="rounded-xl bg-cyan-500 px-4 py-2 text-white shadow-xl">
-        💨 Tailwind
+      <div className="mt-8 grid grid-cols-3 gap-3">
+
+        <div className="rounded-2xl border border-white/10 bg-white/40 dark:bg-slate-900/40 p-4 text-center backdrop-blur-xl">
+
+          <h3 className="text-2xl font-bold text-blue-500">
+            15+
+          </h3>
+
+          <p className="text-xs text-gray-500">
+            Projects
+          </p>
+
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/40 dark:bg-slate-900/40 p-4 text-center backdrop-blur-xl">
+
+          <h3 className="text-2xl font-bold text-violet-500">
+            1+
+          </h3>
+
+          <p className="text-xs text-gray-500">
+            Years
+          </p>
+
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/40 dark:bg-slate-900/40 p-4 text-center backdrop-blur-xl">
+
+          <h3 className="text-2xl font-bold text-cyan-500">
+            20+
+          </h3>
+
+          <p className="text-xs text-gray-500">
+            Skills
+          </p>
+
+        </div>
+
       </div>
-    </motion.div>
+
+      {/* Code Snippet */}
+
+      <motion.div
+        animate={{
+          y: [0, -6, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+        }}
+        className="mt-6 rounded-2xl bg-slate-900 p-4 font-mono text-xs text-green-400"
+      >
+        <p>{"const developer = {"}</p>
+        <p>{"  name: 'Ankesh',"}</p>
+        <p>{"  stack: ['React','Node'],"}</p>
+        <p>{"  status: 'Available'"}</p>
+        <p>{"}"}</p>
+      </motion.div>
+
+    </div>
 
   </div>
+
+  {/* Floating React */}
+  <motion.div
+    animate={{
+      y: [0, -10, 0],
+      rotate: [0, 10, 0],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 4,
+    }}
+    className="absolute -left-8 top-28 rounded-2xl bg-sky-500 px-5 py-3 text-white shadow-xl"
+  >
+    ⚛ React
+  </motion.div>
+
+  {/* Floating Node */}
+  <motion.div
+    animate={{
+      y: [0, 10, 0],
+      rotate: [0, -10, 0],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 5,
+    }}
+    className="absolute -right-8 top-48 rounded-2xl bg-green-600 px-5 py-3 text-white shadow-xl"
+  >
+    🚀 Node
+  </motion.div>
+
+  {/* Floating Tailwind */}
+  <motion.div
+    animate={{
+      y: [0, -12, 0],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 3,
+    }}
+    className="absolute left-0 bottom-12 rounded-2xl bg-cyan-500 px-5 py-3 text-white shadow-xl"
+  >
+    
+  </motion.div>
+
 </motion.div>
 
-          </motion.div>
-        </div>
-      </section>
+  </div>
+
+</section>
 
       <section className="py-16 relative z-10">
         <div className="max-w-6xl mx-auto px-6">
