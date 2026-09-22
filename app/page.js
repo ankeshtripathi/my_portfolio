@@ -77,19 +77,19 @@ const Home = () => {
   ];
   const projects = [
     {
-      image: "/immortalmanpower.png",
-      title: "Immortal Manpower",
+      image: "/imt-solar-360.png",
+      title: "IMT-SOLAR 360",
+      url: "https://uat-greenenergy.immortalgroup.in/login",
+    },
+    {
+      image: "/ibos.png",
+      title: "IBOS",
       url: "https://www.immortalmanpower.com/",
     },
     {
       image: "/chapersons.png",
       title: "Chapersons Services",
       url: "https://chapersons.in/",
-    },
-    {
-      image: "/greenenergy.png",
-      title: "Immortal Green Energy",
-      url: "https://uat-greenenergy.immortalgroup.in/login",
     },
   ];
 

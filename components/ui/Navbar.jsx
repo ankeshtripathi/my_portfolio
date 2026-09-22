@@ -99,6 +99,7 @@ export default function Navbar() {
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
+            { name: "Websites", href: "/websites" },
             { name: "Blog", href: "/blog" },
             { name: "Contact", href: "/contact" },
           ].map((item) => (
@@ -183,6 +184,7 @@ export default function Navbar() {
                   { name: "Home", href: "/" },
                   { name: "About", href: "/about" },
                   { name: "Projects", href: "/projects" },
+                  { name: "Websites", href: "/websites" },
                   { name: "Blog", href: "/blog" },
                   { name: "Contact", href: "/contact" },
                 ].map((item) => (

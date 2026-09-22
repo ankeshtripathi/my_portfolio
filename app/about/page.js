@@ -33,50 +33,31 @@ const stats = [
 
   const experience = [
     {
-      role: " Web Developer",
-      date: "Novmber -2025 -Persnt",
+      role: "Full Stack Developer",
+      date: "Nov 2025 – Present",
       company: "Immortal Technovation",
-      desc: "Lead a team, develop web apps, ensure responsive design, debugging & performance improvements.",
+      desc: "Built enterprise web apps with React, Redux Toolkit, Node.js, Express, PostgreSQL, Sequelize & Tailwind. Secure REST APIs with JWT, Google OAuth & RBAC. Delivered HRMS, CRM & Project Management modules plus analytics dashboards with Excel/PDF exports and cron automation.",
     },
     {
-      role: "intern Web Developer",
-      date: "july-Augest-2024",
-      company: "Code Soft",
-      desc: "Develop scalable web apps, architecture design, code reviews & optimization.",
-    },
-    {
-      role: "Internship",
-      date: "15 July -15 Sep 2023",
-      company: "Code yogi",
-      desc: "Handled key projects, improved UX performance & code quality.",
+      role: "Web Developer Intern",
+      date: "Jun 2025 – Nov 2025",
+      company: "Infotrolix Technology",
+      desc: "Developed responsive UIs with HTML5, CSS3, JavaScript, React.js & Tailwind. Built reusable components, integrated REST APIs with Axios, and implemented Node.js/Express CRUD & authentication.",
     },
   ];
 
   const education = [
     {
-      title: "Bachelor of Technology (B.Tech)",
-      date: "Aug 2022 – May 2025",
-      college: "Uttarakhand Technical University",
-      desc: "CGPA: 7.11",
-    },
-
-    {
-      title: "Diploma in Computer Science Engineering (CSE)",
-      date: "2018 – 2021",
-      college: "Government Polytechnic Srinagar Garhwal",
-      desc: "Board: UBTER | Percentage: 86%",
+      title: "Bachelor of Technology (CSE)",
+      date: "Aug 2022 – Jun 2025",
+      college: "Veer Madho Singh Bhandari Uttarakhand Technical University (UTU)",
+      desc: "CGPA: 7.0",
     },
     {
-      title: "Higher Secondary (12th)",
-      date: " 2019",
-      college: "S.V.M. Mayapur, Haridwar",
-      desc: "Board: Uttarakhand Board | Percentage: 77.6%",
-    },
-    {
-      title: "Secondary School (10th)",
-      date: "2016 – 2017",
-      college: "S.V.M. Ranipur, Haridwar",
-      desc: "Board: Uttarakhand Board | Percentage: 72%",
+      title: "Diploma in Computer Science & Engineering",
+      date: "Aug 2019 – Jun 2022",
+      college: "Uttarakhand Board of Technical Education (UBTER)",
+      desc: "CGPA: 8.85",
     },
   ];
 
@@ -114,10 +95,13 @@ const stats = [
             </Button>
 
             <Button
+              asChild
               variant="outline"
               className="px-6 py-2 rounded-xl border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
             >
-              📄 Download CV
+              <a href="/Ankesh_Prasad_Resume_2.pdf" download="Ankesh_Prasad_Resume.pdf">
+                📄 Download CV
+              </a>
             </Button>
           </div>
 

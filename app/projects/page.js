@@ -7,28 +7,16 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   const project = [
-    // {
-    //   image: "/tm.webp",
-    //   title: "Task Manager App",
-    //   desc: "MERN stack productivity app",
-    //   url: null,
-    // },
     {
-      image: "/vns.webp",
-      title: "Finance Dashboard",
-      desc: "Analytics & charts UI",
-      url: null,
+      image: "/imt-solar-360.png",
+      title: "IMT-SOLAR 360",
+      desc: "All-in-one solar CRM — leads, billing, live install tracking, sales pipeline, and role-based access",
+      url: "https://uat-greenenergy.immortalgroup.in/login",
     },
     {
-      image: "/af.webp",
-      title: "AI Interview App",
-      desc: "Real-time interview system",
-      url: null,
-    },
-    {
-      image: "/immortalmanpower.png",
-      title: "Immortal Manpower",
-      desc: "Manpower and staffing solutions website",
+      image: "/ibos.png",
+      title: "IBOS",
+      desc: "Immortal delivery command center — projects, task pipeline, lead funnel, roles & permissions",
       url: "https://www.immortalmanpower.com/",
     },
     {
@@ -36,12 +24,6 @@ const Projects = () => {
       title: "Chapersons Services",
       desc: "Solar energy, civil engineering, and infrastructure solutions",
       url: "https://chapersons.in/",
-    },
-    {
-      image: "/greenenergy.png",
-      title: "Immortal Green Energy",
-      desc: "Green energy management dashboard",
-      url: "https://uat-greenenergy.immortalgroup.in/login",
     },
   ];
 
