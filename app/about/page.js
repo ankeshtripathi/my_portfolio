@@ -99,7 +99,7 @@ const stats = [
               variant="outline"
               className="px-6 py-2 rounded-xl border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
             >
-              <a href="/Ankesh_Prasad_Resume_2.pdf" download="Ankesh_Prasad_Resume.pdf">
+              <a href="/Ankesh_Prasad_Resume.pdf" download="Ankesh_Prasad_Resume.pdf">
                 📄 Download CV
               </a>
             </Button>

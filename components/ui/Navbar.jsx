@@ -114,7 +114,7 @@ export default function Navbar() {
           ))}
 
           <Button asChild className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl px-5 hover:scale-105 transition shadow-lg">
-            <a href="/Ankesh_Prasad_Resume_2.pdf" download="Ankesh_Prasad_Resume.pdf">
+            <a href="/Ankesh_Prasad_Resume.pdf" download="Ankesh_Prasad_Resume.pdf">
               Download CV
             </a>
           </Button>
@@ -199,7 +199,7 @@ export default function Navbar() {
                 ))}
 
                 <Button asChild className="mt-6 rounded-full px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:scale-105 transition">
-                <a href="/Ankesh_Prasad_Resume_2.pdf" download="Ankesh_Prasad_Resume.pdf">
+                <a href="/Ankesh_Prasad_Resume.pdf" download="Ankesh_Prasad_Resume.pdf">
                   Download CV
                 </a>
               </Button>
